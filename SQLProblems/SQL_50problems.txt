@@ -1,0 +1,465 @@
+--SELECT        makes.makeID, cardetails.MakeID AS Expr1
+--FROM            cardetails INNER JOIN
+--                         makes ON cardetails.MakeID = makes.makeID
+--Insert into makes
+--select  distinct Make from cardetails
+--order by make ASC
+
+--Select *from makes
+
+--update cardetails
+--set makeIDD=(select MakeID from makes where makes.makeName= cardetails.Make);
+------------------------------
+--CREATE VIEW VehicleMasterDetails2 AS Select
+--VehicleDetails.ID ,
+--VehicleDetails.MakeID , Makes.Make ,
+--VehicleDetails.ModelID , MakeModels.ModelName ,
+--VehicleDetails.SubModelID , SubModels.SubModelName ,
+--VehicleDetails.BodyID , Bodies.BodyName ,
+--VehicleDetails.Vehicle_Display_Name ,
+--VehicleDetails.Year,
+--VehicleDetails.DriveTypeID , DriveTypes.DriveTypeName ,
+--VehicleDetails.Engine , VehicleDetails.Engine_CC,
+--VehicleDetails.Engine_Cylinders ,
+--VehicleDetails.ngine_Liter_Display ,
+--VehicleDetails.FuelTypeID , FuelTypes.FuelTypeName ,
+--VehicleDetails.NumDoors
+--from VehicleDetails
+--left join Makes on VehicleDetails.MakeID=Makes.MakeID
+--left join MakeModels on
+--VehicleDetails.ModelID=MakeModels.ModelID
+--left join SubModels on
+--VehicleDetails.SubModelID=SubModels.SubModelID
+--left join Bodies on VehicleDetails.BodyID=Bodies.BodyID
+--left join DriveTypes on
+--VehicleDetails.DriveTypeID=DriveTypes.DriveTypeID
+--left join FuelTypes on
+--VehicleDetails.FuelTypeID=FuelTypes.FuelTypeID;
+--SELECT * FROM VehicleMasterDetails
+
+--------------------------------------
+--3-- 
+
+SELECT * FROM VehicleMasterDetails
+--4-- 
+
+-----------
+Select count(*) as NumberOfVehicles from VehicleDetails
+where VehicleDetails.Year between 1950 and 2000;
+
+---------
+--5-- 
+
+select Makes.Make , count(*) as NumberOfVehicles 
+from VehicleDetails inner join Makes
+ON VehicleDetails.MakeID=Makes.MakeID
+
+WHERE VehicleDetails.Year BETWEEN 1950 AND 2000
+GROUP BY Make
+order by NumberOfVehicles DESC;
+
+
+
+------------
+--6-- 
+
+select Makes.Make , count(*) as NumberOfVehicles 
+from VehicleDetails inner join Makes
+ON VehicleDetails.MakeID=Makes.MakeID
+
+WHERE VehicleDetails.Year BETWEEN 1950 AND 2000
+GROUP BY Make
+HAVING count(*) >12000
+order by NumberOfVehicles DESC;
+
+--7-- 
+
+select
+NumberOfVehicles ,totalVechails,
+perc=CAST(NumberOfVehicles as float )/ CAST(totalVechails as float)
+from (
+select Makes.Make , count(*) as NumberOfVehicles,
+(select count(*) from VehicleDetails) 
+as totalVechails 
+from VehicleDetails inner join Makes
+ON VehicleDetails.MakeID=Makes.MakeID
+
+WHERE VehicleDetails.Year BETWEEN 1950 AND 2000
+GROUP BY Make)
+as tb1
+order by NumberOfVehicles DESC ;
+
+--8-- 
+ select FuelTypes.FuelTypeName , Makes.Make,count(*) as NumberOfVehicles
+ from VehicleDetails inner join Makes
+ON VehicleDetails.MakeID=Makes.MakeID 
+ inner join FuelTypes
+ON VehicleDetails.FuelTypeID= FuelTypes.FuelTypeID 
+GROUP BY Makes.Make,FuelTypes.FuelTypeName
+order by Make ASC;
+--9-- 
+select VehicleDetails.*, FuelTypes.FuelTypeName 
+ from VehicleDetails inner join FuelTypes
+ON VehicleDetails.FuelTypeID= FuelTypes.FuelTypeID 
+where FuelTypeName=N'GAS'
+
+
+
+--10-- 
+
+select  Distinct Makes.Make ,  FuelTypes.FuelTypeName 
+from VehicleDetails inner join FuelTypes
+ON VehicleDetails.FuelTypeID= FuelTypes.FuelTypeID 
+inner join Makes
+ON VehicleDetails.MakeID=Makes.MakeID 
+where FuelTypeName=N'GAS'
+
+
+--11--
+select count (*) as TotalMakesRunsOnGas
+FROM 
+
+(SELECT distinct Makes.Make,FuelTypes.FuelTypeName
+from
+VehicleDetails inner join FuelTypes
+on VehicleDetails.FuelTypeID=FuelTypes.FuelTypeID
+inner join Makes 
+on VehicleDetails.MakeID=Makes.MakeID
+where FuelTypes.FuelTypeName=N'GAS')as tb1;
+
+
+
+--12-- 
+
+
+SELECT distinct Makes.Make ,count(*) as num from
+VehicleDetails inner join Makes 
+on VehicleDetails.MakeID=Makes.MakeID
+group by Make
+order by num Desc;
+
+--13-- 
+
+SELECT distinct Makes.Make ,count(*) as num from
+VehicleDetails inner join Makes 
+on VehicleDetails.MakeID=Makes.MakeID
+group by Make
+HAVING count(*) >20000
+order by num Desc;
+--14-- 
+Select Makes.Make from Makes
+where Make like 'B%'
+
+--15--
+Select Makes.Make from Makes
+where Make like '%w'
+--16--
+
+Select DISTINCT Makes.Make ,DriveTypes.DriveTypeName
+from
+VehicleDetails inner join Makes
+on VehicleDetails.DriveTypeID=Makes.MakeID
+inner join DriveTypes 
+on VehicleDetails.DriveTypeID=DriveTypes.DriveTypeID
+where DriveTypeName='FWD'
+--17--
+Select Count(*) as TotalMakes from(
+Select DISTINCT Makes.Make ,DriveTypes.DriveTypeName
+from
+VehicleDetails inner join Makes
+on VehicleDetails.DriveTypeID=Makes.MakeID
+inner join DriveTypes 
+on VehicleDetails.DriveTypeID=DriveTypes.DriveTypeID
+where DriveTypeName='FWD') as tbl
+
+--18--
+select Distinct Makes.Make,DriveTypes.DriveTypeName,
+Count(*) as Total
+from
+VehicleDetails inner join Makes
+on VehicleDetails.MakeID=Makes.MakeID
+inner join DriveTypes
+on VehicleDetails.DriveTypeID=DriveTypes.DriveTypeID
+group by Make,DriveTypeName
+order by Make Asc , Total Desc
+--19-- 
+select Distinct Makes.Make,DriveTypes.DriveTypeName,
+Count(*) as Total
+from
+VehicleDetails inner join Makes
+on VehicleDetails.MakeID=Makes.MakeID
+inner join DriveTypes
+on VehicleDetails.DriveTypeID=DriveTypes.DriveTypeID
+group by Make,DriveTypeName
+HAVING COUNT(*)>10000
+order by Make Asc , Total Desc
+
+--20--
+Select * from VehicleDetails
+
+Select COUNT(*) AS HASNODOORS from VehicleDetails
+where VehicleDetails.NumDoors is null
+Select COUNT(*) AS TOTAL from VehicleDetails
+
+--SELECT PERC=CAST( 100*HASNODOORS AS FLOAT )/CAST (TOTAL AS FLOAT);
+
+SELECT PERC=CAST (  
+(Select COUNT(*) AS HASNODOORS from VehicleDetails
+where VehicleDetails.NumDoors is null) AS FLOAT
+                 )  
+  /
+CAST ( 
+(Select COUNT(*) AS TOTAL from VehicleDetails) AS FLOAT
+      ) ;
+
+--21--
+
+--SELECT distinct Make ,MakeModels.MakeID,SubModels.SubModelName
+--from 
+
+--VehicleDetails inner join Makes
+--on VehicleDetails.MakeID=Makes.MakeID
+--inner join MakeModels
+--on VehicleDetails.ModelID=MakeModels.ModelID
+-- inner join SubModels
+--on VehicleDetails.SubModelID=SubModels.SubModelID
+--where SubModelName=N'Elite'
+---
+--where SubModelName=N'Elite'
+--SELECT distinct VehicleDetails.MakeID, Makes.Make,
+--SubModelName FROM VehicleDetails 
+--INNER JOIN SubModels ON
+--VehicleDetails.SubModelID = SubModels.SubModelID 
+--INNER JOIN Makes ON
+-- VehicleDetails.MakeID  = Makes.MakeID
+--where SubModelName='Elite'
+
+--24--
+Select MAKE from VehicleDetails
+VehicleDetails inner join Makes
+on VehicleDetails.MakeID=Makes.MakeID
+where NumDoors=2 AND Engine_Liter_Display>3;
+--25--
+select VehicleDetails.*, Makes.Make  from
+VehicleDetails inner join Makes
+on VehicleDetails.MakeID=Makes.MakeID
+where( Engine like '%OHV%') AND Engine_Cylinders=4;
+--26--
+SELECT BodyName, VehicleDetails.*
+FROM VehicleDetails INNER JOIN
+ Bodies ON VehicleDetails.BodyID =
+Bodies.BodyID
+Where BodyName='Sport Utility' and Year > 2020
+
+
+--27--
+SELECT bodyName, VehicleDetails.*
+FROM VehicleDetails INNER JOIN
+ Bodies ON VehicleDetails.BodyID =
+Bodies.BodyID
+Where BodyName in ('Coupe','Hatchback','Sedan')
+
+
+--28--
+SELECT bodyName, VehicleDetails.*
+FROM VehicleDetails INNER JOIN
+ Bodies ON VehicleDetails.BodyID =
+Bodies.BodyID
+Where BodyName in ('Coupe','Hatchback','Sedan') and Year in
+( 2008, 2020, 2021)
+
+--29--
+select found=1
+where
+exists (
+ select  * from VehicleDetails
+ where Year =1950
+ )
+
+
+--30--
+
+
+SELECT VehicleDetails.Vehicle_Display_Name,
+VehicleDetails.NumDoors,
+DoorDescription=
+CASE
+WHEN NumDoors is null THEN 'Not Set'
+WHEN NumDoors = 0 THEN 'Zero Doors'
+WHEN NumDoors = 1 THEN 'One Door'
+WHEN NumDoors = 2 THEN 'Two Doors'
+WHEN NumDoors = 3 THEN 'Three Doors'
+WHEN NumDoors = 4 THEN 'Four Doors'
+WHEN NumDoors = 5 THEN 'Five Doors'
+WHEN NumDoors = 6 THEN 'Six Doors'
+WHEN NumDoors = 8 THEN 'Eight Doors'
+ELSE 'UnKnown'
+END
+FROM VehicleDetails
+--31--
+select
+VehicleDetails.Vehicle_Display_Name,
+VehicleDetails.Year ,
+Age=YEAR(GETDATE())-VehicleDetails.Year
+FROM VehicleDetails
+ORDER BY Age DESC
+--32--
+select* from
+(SELECT VehicleDetails.Vehicle_Display_Name,
+VehicleDetails.Year,
+age = year(GETDATE())-VehicleDetails.Year
+from VehicleDetails) as t
+where age between 15 and 25;
+--33--
+
+select *from VehicleDetails;
+select max(VehicleDetails.Engine_CC	) as maxengine,
+max(VehicleDetails.Engine_CC	) as minengine,
+AVG(VehicleDetails.Engine_CC)as average
+from VehicleDetails
+--34--
+Select VehicleDetails.Vehicle_Display_Name from
+VehicleDetails
+where Engine_CC = ( select Min(Engine_CC) as MinEngineCC 
+from VehicleDetails )
+
+--35--
+Select VehicleDetails.Vehicle_Display_Name from
+VehicleDetails
+where Engine_CC = ( select max(Engine_CC) as MinEngineCC 
+from VehicleDetails )
+
+--36--
+Select VehicleDetails.Vehicle_Display_Name from
+VehicleDetails
+where Engine_CC < ( select AVG(Engine_CC) as MinEngineCC 
+from VehicleDetails ) 
+
+--37--
+select Count(*) as NumberOfVehiclesAboveAverageEngineCC 
+from
+(
+Select ID,VehicleDetails.Vehicle_Display_Name from
+VehicleDetails
+where Engine_CC > ( select Avg(Engine_CC) as
+MinEngineCC from VehicleDetails )
+) R1
+
+--38--
+select distinct VehicleDetails.Engine_CC 
+from VehicleDetails
+order by Engine_CC desc
+
+--39--
+select distinct top 3 VehicleDetails.Engine_CC 
+from VehicleDetails
+order by Engine_CC desc
+--40--
+Select Vehicle_Display_Name from VehicleDetails
+where Engine_CC in
+(
+Select distinct top 3 Engine_CC from VehicleDetails
+Order By Engine_CC Desc
+)
+
+
+
+--41--
+Select distinct Makes.Make from VehicleDetails
+inner join Makes on VehicleDetails.MakeID= Makes.MakeID
+where Engine_CC in
+(
+Select distinct top 3 Engine_CC from VehicleDetails
+Order By Engine_CC Desc
+)order by Make
+
+
+--42--
+select Engine_CC ,
+Tax=
+CASE
+when Engine_CC between 0 and 1000 then 100
+when Engine_CC between 1001 and 2000 then 200
+when Engine_CC between 2001 and 4000 then 300
+when Engine_CC between 4001 and 6000 then 400
+when Engine_CC between 6001 and 8000 then 500
+when Engine_CC > 8000 then 600
+else 0
+END
+from (SELECT DISTINCT VehicleDetails.Engine_CC FROM
+VehicleDetails)AS TBL
+order by Engine_CC asc
+
+--43--
+SELECT Makes.Make, Sum(VehicleDetails.NumDoors) AS
+TotalNumberOfDoors
+FROM VehicleDetails INNER JOIN
+ Makes ON VehicleDetails.MakeID = Makes.MakeID
+Group By Make -- important to group make
+Order By TotalNumberOfDoors asc
+
+--44--
+SELECT Makes.Make, Sum(VehicleDetails.NumDoors) AS
+TotalNumberOfDoors
+FROM VehicleDetails INNER JOIN
+ Makes ON VehicleDetails.MakeID = Makes.MakeID
+ where Make='ford'
+Group By Make -- important to group make
+Order By TotalNumberOfDoors asc
+
+--45--
+
+SELECT Makes.Make, COUNT(*) AS NumberOfModels
+FROM Makes INNER JOIN
+ MakeModels ON Makes.MakeID =MakeModels.MakeID
+GROUP BY Makes.Make
+Order By NumberOfModels Desc
+--46--
+SELECT TOP 3 Makes.Make, COUNT(*) AS NumberOfModels
+FROM Makes INNER JOIN
+ MakeModels ON Makes.MakeID =MakeModels.MakeID
+GROUP BY Makes.Make
+Order By NumberOfModels Desc
+-- 47 --
+SELECT top 1 COUNT(*) AS NumberOfModels
+FROM Makes INNER JOIN
+ MakeModels ON Makes.MakeID =MakeModels.MakeID
+GROUP BY Makes.Make
+Order By NumberOfModels Desc
+----------
+select Max(NumberOfModels) as MaxNumberOfModels
+from
+(
+SELECT Makes.Make, COUNT(*) AS
+NumberOfModels
+FROM Makes INNER JOIN
+MakeModels ON
+Makes.MakeID = MakeModels.MakeID
+GROUP BY Makes.Make
+) R1
+
+--48--
+SELECT Makes.Make, COUNT(*) AS NumberOfModels
+FROM Makes INNER JOIN
+MakeModels ON Makes.MakeID = MakeModels.MakeID
+GROUP BY Makes.Make
+having COUNT(*) = (select Max(NumberOfModels) as
+MaxNumberOfModels 
+from (
+SELECT MakeID, COUNT(*) AS NumberOfModels 
+FROM MakeModels GROUP BY MakeID) R1)
+
+--49--
+SELECT Makes.Make, COUNT(*) AS NumberOfModels
+FROM Makes INNER JOIN
+MakeModels ON Makes.MakeID = MakeModels.MakeID
+GROUP BY Makes.Make
+having COUNT(*) = (select min(NumberOfModels) as
+MaxNumberOfModels 
+from (
+SELECT MakeID, COUNT(*) AS NumberOfModels 
+FROM MakeModels GROUP BY MakeID) R1)
+
+--50--
+select * from FuelTypes
+order by NewID()
