@@ -1,0 +1,7 @@
+D:\DATABASEFILES\ExecuteScalar\obj\Debug\ExecuteScalar.csproj.AssemblyReference.cache
+D:\DATABASEFILES\ExecuteScalar\obj\Debug\ExecuteScalar.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\ExecuteScalar\bin\Debug\ExecuteScalar.exe.config
+D:\DATABASEFILES\ExecuteScalar\bin\Debug\ExecuteScalar.exe
+D:\DATABASEFILES\ExecuteScalar\bin\Debug\ExecuteScalar.pdb
+D:\DATABASEFILES\ExecuteScalar\obj\Debug\ExecuteScalar.exe
+D:\DATABASEFILES\ExecuteScalar\obj\Debug\ExecuteScalar.pdb

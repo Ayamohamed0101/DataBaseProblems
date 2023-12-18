@@ -1,0 +1,7 @@
+D:\DATABASEFILES\contacts1\bin\Debug\contacts1.exe.config
+D:\DATABASEFILES\contacts1\bin\Debug\contacts1.exe
+D:\DATABASEFILES\contacts1\bin\Debug\contacts1.pdb
+D:\DATABASEFILES\contacts1\obj\Debug\contacts1.csproj.AssemblyReference.cache
+D:\DATABASEFILES\contacts1\obj\Debug\contacts1.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\contacts1\obj\Debug\contacts1.exe
+D:\DATABASEFILES\contacts1\obj\Debug\contacts1.pdb

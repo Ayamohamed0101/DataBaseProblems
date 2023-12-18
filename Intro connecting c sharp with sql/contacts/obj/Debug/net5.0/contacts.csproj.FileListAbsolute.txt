@@ -1,0 +1,4 @@
+D:\DATABASEFILES\contacts\obj\Debug\net5.0\contacts.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATABASEFILES\contacts\obj\Debug\net5.0\contacts.AssemblyInfoInputs.cache
+D:\DATABASEFILES\contacts\obj\Debug\net5.0\contacts.AssemblyInfo.cs
+D:\DATABASEFILES\contacts\obj\Debug\net5.0\contacts.csproj.CoreCompileInputs.cache

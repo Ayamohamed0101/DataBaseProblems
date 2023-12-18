@@ -1,0 +1,7 @@
+D:\DATABASEFILES\ParameterizedQueryWithLike\bin\Debug\ParameterizedQueryWithLike.exe.config
+D:\DATABASEFILES\ParameterizedQueryWithLike\bin\Debug\ParameterizedQueryWithLike.exe
+D:\DATABASEFILES\ParameterizedQueryWithLike\bin\Debug\ParameterizedQueryWithLike.pdb
+D:\DATABASEFILES\ParameterizedQueryWithLike\obj\Debug\ParameterizedQueryWithLike.csproj.AssemblyReference.cache
+D:\DATABASEFILES\ParameterizedQueryWithLike\obj\Debug\ParameterizedQueryWithLike.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\ParameterizedQueryWithLike\obj\Debug\ParameterizedQueryWithLike.exe
+D:\DATABASEFILES\ParameterizedQueryWithLike\obj\Debug\ParameterizedQueryWithLike.pdb

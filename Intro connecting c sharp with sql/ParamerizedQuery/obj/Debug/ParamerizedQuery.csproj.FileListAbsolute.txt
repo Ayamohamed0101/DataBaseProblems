@@ -1,0 +1,7 @@
+D:\DATABASEFILES\ParamerizedQuery\bin\Debug\ParamerizedQuery.exe.config
+D:\DATABASEFILES\ParamerizedQuery\bin\Debug\ParamerizedQuery.exe
+D:\DATABASEFILES\ParamerizedQuery\bin\Debug\ParamerizedQuery.pdb
+D:\DATABASEFILES\ParamerizedQuery\obj\Debug\ParamerizedQuery.csproj.AssemblyReference.cache
+D:\DATABASEFILES\ParamerizedQuery\obj\Debug\ParamerizedQuery.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\ParamerizedQuery\obj\Debug\ParamerizedQuery.exe
+D:\DATABASEFILES\ParamerizedQuery\obj\Debug\ParamerizedQuery.pdb

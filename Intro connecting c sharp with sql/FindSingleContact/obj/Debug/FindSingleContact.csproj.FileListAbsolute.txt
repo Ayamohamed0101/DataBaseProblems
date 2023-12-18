@@ -1,0 +1,7 @@
+D:\DATABASEFILES\FindSingleContact\bin\Debug\FindSingleContact.exe.config
+D:\DATABASEFILES\FindSingleContact\bin\Debug\FindSingleContact.exe
+D:\DATABASEFILES\FindSingleContact\bin\Debug\FindSingleContact.pdb
+D:\DATABASEFILES\FindSingleContact\obj\Debug\FindSingleContact.csproj.AssemblyReference.cache
+D:\DATABASEFILES\FindSingleContact\obj\Debug\FindSingleContact.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\FindSingleContact\obj\Debug\FindSingleContact.exe
+D:\DATABASEFILES\FindSingleContact\obj\Debug\FindSingleContact.pdb
