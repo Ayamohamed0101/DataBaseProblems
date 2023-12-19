@@ -1,0 +1,7 @@
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\bin\Debug\RetrieveAutoNumafterInserting.exe.config
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\bin\Debug\RetrieveAutoNumafterInserting.exe
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\bin\Debug\RetrieveAutoNumafterInserting.pdb
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\obj\Debug\RetrieveAutoNumafterInserting.csproj.AssemblyReference.cache
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\obj\Debug\RetrieveAutoNumafterInserting.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\obj\Debug\RetrieveAutoNumafterInserting.exe
+D:\DATABASEFILES\RetrieveAutoNumafterInserting\obj\Debug\RetrieveAutoNumafterInserting.pdb
