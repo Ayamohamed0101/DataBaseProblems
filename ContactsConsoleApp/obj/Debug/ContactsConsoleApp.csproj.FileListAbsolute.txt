@@ -1,0 +1,12 @@
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe.config
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.pdb
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.dll
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.dll
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.pdb
+D:\DATABASEFILES\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.pdb
+D:\DATABASEFILES\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.AssemblyReference.cache
+D:\DATABASEFILES\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.CopyComplete
+D:\DATABASEFILES\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe
+D:\DATABASEFILES\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.pdb
