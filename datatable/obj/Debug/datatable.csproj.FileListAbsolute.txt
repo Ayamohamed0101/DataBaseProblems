@@ -1,0 +1,7 @@
+D:\DATABASEFILES\datatable\bin\Debug\datatable.exe.config
+D:\DATABASEFILES\datatable\bin\Debug\datatable.exe
+D:\DATABASEFILES\datatable\bin\Debug\datatable.pdb
+D:\DATABASEFILES\datatable\obj\Debug\datatable.csproj.AssemblyReference.cache
+D:\DATABASEFILES\datatable\obj\Debug\datatable.csproj.CoreCompileInputs.cache
+D:\DATABASEFILES\datatable\obj\Debug\datatable.exe
+D:\DATABASEFILES\datatable\obj\Debug\datatable.pdb
